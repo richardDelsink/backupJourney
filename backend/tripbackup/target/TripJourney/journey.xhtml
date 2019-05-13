@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" />
+    <script type="javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" />
+    <title>journeys</title>
+</h:head>
+<f:metadata>
+    <f:viewParam name="userId" value="#{journeyBean.userId}" required="false"/>
+</f:metadata>
+
+<h:body class="container">
+    <h1>Journeys</h1>
+    <h:panelGroup>
+        <h:form class="page-header">
+            <h:outputText   value="#{authBean.getPrincipalName()}"/>
+            <h:commandLink  action="#{authBean.doLogout()}" value="Logout"/>
+        </h:form>
+    </h:panelGroup>
+    <br/>
+    <h:panelGroup id="journeys" >
+        <h:form class="well">
+            <h:dataTable class="table" value="#{journeyBean.journeys}" var ="journey">
+                <h:column>
+                    <f:facet name = "header">journeyName</f:facet>
+                    <h:outputLabel value="#{journey.journeyName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Description</f:facet>
+                    <h:outputLabel value="#{journey.journeySummary}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Start date</f:facet>
+                    <h:outputLabel value="#{journey.startDate}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">End date</f:facet>
+                    <h:outputLabel value="#{journey.endDate}"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton class="btn btn-danger" rendered="#{authBean.admin}" value ="Remove" action="#{journeyBean.removeJourney(journeyBean.journeys.get(0).journeyName)}">
+                <f:ajax event="action" render="journeys"/>
+            </h:commandButton>
+        </h:form>
+    </h:panelGroup>
+</h:body>
+</html>

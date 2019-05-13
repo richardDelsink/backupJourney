@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TripJourney:war exploded">
+    <output-path>$PROJECT_DIR$/target/TripJourney</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>TripJourney</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TripJourney" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
+          <element id="library" level="project" name="Maven: io.swagger.core.v3:swagger-jaxrs2-servlet-initializer:2.0.0" />
+          <element id="library" level="project" name="Maven: org.webjars:swagger-ui:3.17.4" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:6.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/TripJourney/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="TripJourney/web/Web" />
+    </root>
+  </artifact>
+</component>

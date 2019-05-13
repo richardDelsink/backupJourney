@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" />
+        <script type="javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" />
+        <title>users</title>
+    </h:head>
+    <h:body class="container">
+    <h1>Users and Update Role Groups</h1>
+        <h:panelGroup>
+            <h:form class="page-header">
+                <h:outputText   value="#{authBean.getPrincipalName()}"/>
+                <h:commandLink  action="#{authBean.doLogout()}" value="Logout"/>
+            </h:form>
+        </h:panelGroup>
+        <br/>
+        <h:panelGroup>
+            <h:form>
+                <h:outputLabel value="Search users: "/>
+                <h:inputText class="form-control" value="#{userBean.filter}" id="filter">
+                    <f:ajax event="keyup" execute="filter" render="users"/>
+                </h:inputText> 
+            </h:form>
+        </h:panelGroup>
+        <br/>
+        <h:panelGroup id="users">
+            <h:form class="well">
+                <h:dataTable class="table" value="#{userBean.users}" var ="user">
+                    <h:column>
+                        <f:facet name = "header">Name</f:facet>
+                        <h:outputLabel value="#{user.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Role Groups</f:facet>
+                        <h:outputLabel value="#{user.group}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Select role group</f:facet>
+                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="User" action="#{userBean.updateGroup(user.name,'UserGroup')}" />
+                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="Admin" action="#{userBean.updateGroup(user.name,'AdminGroup')}" />
+                    </h:column>
+
+                    <h:column>
+                        <h:commandButton class="btn btn-danger" rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" value ="Remove" action="#{userBean.removeUser(user.name)}">
+                            <f:ajax event="action" render="users"/>
+                        </h:commandButton>
+                    </h:column>
+                    <h:column>
+                        <h:outputLink class="btn btn-primary" value ="journey.xhtml">Details
+                            <f:param name="userId" value="#{user.id}"/>
+                        </h:outputLink>
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+        </h:panelGroup>
+    </h:body>
+</html>
+
