@@ -29,6 +29,9 @@
             </h:form>
         </h:panelGroup>
         <br/>
+        <h:form>
+            <h:messages id="msg" class="alert alert-danger"/>
+        </h:form>
         <h:panelGroup id="users">
             <h:form class="well">
                 <h:dataTable class="table" value="#{userBean.users}" var ="user">
@@ -42,11 +45,12 @@
                     </h:column>
                     <h:column>
                         <f:facet name = "header">Select role group</f:facet>
-                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="User" action="#{userBean.updateGroup(user.name,'UserGroup')}" />
-                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="Admin" action="#{userBean.updateGroup(user.name,'AdminGroup')}" />
+                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="User" action="#{userBean.updateGroup(user.name,'User')}" />
+                        <h:commandButton rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" class="btn btn-warning" value="Admin" action="#{userBean.updateGroup(user.name,'Admin')}" />
                     </h:column>
 
                     <h:column>
+
                         <h:commandButton class="btn btn-danger" rendered="#{authBean.admin and user.name != authBean.getPrincipalName()}" value ="Remove" action="#{userBean.removeUser(user.name)}">
                             <f:ajax event="action" render="users"/>
                         </h:commandButton>
@@ -56,9 +60,9 @@
                             <f:param name="userId" value="#{user.id}"/>
                         </h:outputLink>
                     </h:column>
-
                 </h:dataTable>
             </h:form>
+
         </h:panelGroup>
     </h:body>
 </html>

@@ -1,18 +1,24 @@
 
 package bean;
 
+import com.sun.javafx.util.Logging;
 import domain.Group;
 import domain.User;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javax.ejb.EJBTransactionRolledbackException;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 
 import service.UserService;
+
+import static javax.faces.application.FacesMessage.SEVERITY_INFO;
 
 
 @Named(value = "userBean")
@@ -70,10 +76,14 @@ public class UserBean implements Serializable{
     }
 
 
-    public void updateGroup(String name, String group){
-        User u = userService.findByName(name);
-        Group g = new Group(group);
-        u.getGroup().add(g);
-        userService.update(u);
+    public void updateGroup(String name, String group) {
+        try {
+            User u = userService.findByName(name);
+            Group g = new Group(group);
+            u.getGroup().add(g);
+            userService.update(u);
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().addMessage("msg", new FacesMessage(SEVERITY_INFO, name +" has already been assign "+group+" role", null));
+        }
     }
 }

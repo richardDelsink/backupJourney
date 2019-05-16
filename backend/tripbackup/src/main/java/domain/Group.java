@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity(name = "GROUPS")
 public class Group implements Serializable {
 
-    public static final String ADMIN_GROUP="AdminGroup", USER_GROUP="UserGroup";
+    public static final String ADMIN_GROUP="Admin", USER_GROUP="User";
 
     @Id
     private String groupName;

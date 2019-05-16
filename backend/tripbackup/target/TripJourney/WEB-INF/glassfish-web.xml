@@ -4,11 +4,11 @@
   <context-root>/TripJourney</context-root>
   <security-role-mapping>
     <role-name>AdminRole</role-name>
-    <group-name>AdminGroup</group-name>
+    <group-name>Admin</group-name>
   </security-role-mapping>
   <security-role-mapping>
     <role-name>UserRole</role-name>
-    <group-name>UserGroup</group-name>
+    <group-name>User</group-name>
   </security-role-mapping>
   <class-loader delegate="true"/>
   <jsp-config>
