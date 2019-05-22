@@ -29,7 +29,7 @@ public class MessageRestAssureTest {
 
     @Test
     public void createComment() {
-        Message canadaComment = new Message(3,78,"vet goede spull te zien");
+        Message canadaComment = new Message(3,"Richard","vet goede spull te zien");
 
         given().
                 contentType("application/json").

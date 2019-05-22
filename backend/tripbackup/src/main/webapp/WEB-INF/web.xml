@@ -17,8 +17,11 @@
         <session-timeout>
             30
         </session-timeout>
+        <cookie-config>
+            <http-only>true</http-only> <!-- Prevent client side scripting from accessing/manipulating session cookie. -->
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode> <!-- This disables URL rewriting. -->
     </session-config>
-
     <welcome-file-list>
         <welcome-file>user.xhtml</welcome-file>
     </welcome-file-list>

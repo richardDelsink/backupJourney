@@ -99,10 +99,10 @@ public class StepJpaTest {
         cal.add(Calendar.DAY_OF_YEAR, noOfDays);
         java.util.Date date = cal.getTime();
 
-        canada = new Journey("Canada", "Going to Canada all alone",startdate,date,"friends",willem.getId());
-        usa = new Journey("Usa", "Going to America all alone",startdate,date,"friends",wesley.getId());
-        germany = new Journey("Germany", "Going to Germany all alone",startdate,date,"friends",willem.getId());
-        belgium = new Journey("Belgium", "Going to Belgium all alone",startdate,date,"friends",frank.getId());
+        canada = new Journey("Canada", "Going to Canada all alone",startdate,date,"friends",willem.getName());
+        usa = new Journey("Usa", "Going to America all alone",startdate,date,"friends",wesley.getName());
+        germany = new Journey("Germany", "Going to Germany all alone",startdate,date,"friends",willem.getName());
+        belgium = new Journey("Belgium", "Going to Belgium all alone",startdate,date,"friends",frank.getName());
 
         tx.begin();
         journeyDaoJpa.add(canada);
@@ -120,8 +120,8 @@ public class StepJpaTest {
         cal.add(Calendar.DAY_OF_YEAR, noOfDays);
         java.util.Date date = cal.getTime();
 
-        stepCanada = new Step(canada,"Ontario","Ontario",startdate,"There is no story");
-        stepCanada2 = new Step(canada,"Quebec","Quebec",startdate,"There is no story");
+        stepCanada = new Step(canada,"Ontario","Ontario","There is no story");
+        stepCanada2 = new Step(canada,"Quebec","Quebec","There is no story");
 
     }
     @After

@@ -1,0 +1,160 @@
+// custom functions to call
+$white: #f3f5f7;
+html{
+
+}
+body {
+  width: 400px;
+  high:400px;
+
+}
+.container_step{
+  display: inline-block;
+  height:100vh;
+  width: 30%;
+  background: $white;
+  overflow: scroll;
+  z-index: 1;
+
+}
+.createComment {
+  padding: 12px;
+  float: left;
+  width: 70%;
+  margin: 5px;
+  border: 1px solid rgba(211,211,211,1);
+  border-radius: 5px;
+}
+
+.like {
+  display: inline-block;
+  background-color: white;
+  color: #000;
+  border: 1px solid #dfe3e9;
+  border-radius: 50px;
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  margin:20px 5px 20px 5px;
+  &:hover{
+    background-color: #dfe3e9;
+  }
+}
+
+.comment {
+    display: inline-block;
+    background-color: white;
+    color: #000;
+    border: 1px solid #dfe3e9;
+    border-radius: 50px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    margin:15px 0px 15px 0px;
+    &:hover{
+      background-color: #dfe3e9;
+    }
+  }
+.newComment {
+  display:inline;
+  background-color: white;
+  color: #000;
+  border: 1px solid #dfe3e9;
+  border-radius: 100px;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  margin:15px 0px 15px 0px;
+  &:hover{
+    background-color: #dfe3e9;
+  }
+}
+
+.stepButton {
+  display:inline;
+  background-color: #de2b52;
+  color: #fff;
+  border: 1px solid #de2b52;
+  border-radius: 100px;;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin:100px 15px 0px 15px;
+  font-size: 40px;
+  &:hover{
+    border: 1px solid #dfe3e9;
+    background-color: #dfe3e9;
+  }
+}
+.addStep {
+  display: block;
+  float: left;
+  background-color: #de2b52;
+  color: #fff;
+  border: 1px solid #de2b52;
+  border-radius: 40px;;
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  margin:15px 0px 15px 0px;
+  &:hover{
+    border: 1px solid #dfe3e9;
+    background-color: #dfe3e9;
+  }
+}
+
+.card{
+  border: 1px solid #dfe3e9;
+  border-radius: 15px;
+  position: relative;
+  text-align: left;
+  margin: 50px 30px 50px 30px;
+  width: 90%;
+  min-hight: 100%;
+  background: #fff;
+}
+.createStep {
+  width: 500px;
+  z-index: 0;
+  height: 500px;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: 1000px;
+}
+.stepForm {
+  display:block;
+}
+
+.lik{
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  height: 100px;
+  background-color: #002e3d;
+}
+.cc {
+  margin-left: 350px;
+
+}
+
+.ll {
+  margin-left: 340px;
+  font-size: 15px;
+}
+
+.hh{
+
+  margin-left: 340px;
+}
+
+.jj{
+  width: 100%;
+  height: 300px;
+  background-color: #3f5b67;
+  color: white;
+  font-size: 40px;
+}
+
+.dd{
+  margin-left: 300px;
+}

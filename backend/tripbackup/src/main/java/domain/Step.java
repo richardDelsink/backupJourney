@@ -24,25 +24,27 @@ public class Step implements Serializable {
     private Journey journey;
     private String location;
     private String stepName;
-    @Temporal(TemporalType.DATE)
-    private Date arrivalTime;
     private String story;
     @OneToMany()
     private List<User> like;
+    @OneToMany()
+    private List<Message> messages;
     @Temporal(TemporalType.TIMESTAMP)
     private Date postDate;
+
 
     public Step(){
     }
 
-    public Step(Journey journey , String location, String stepName, Date arrivalTime, String story) {
+    public Step(Journey journey , String location, String stepName, String story) {
         this.journey = journey;
         this.location = location;
         this.stepName = stepName;
-        this.arrivalTime = arrivalTime;
         this.story = story;
         this.like = new ArrayList<>();
         this.postDate = new Date();
+        this.messages = new ArrayList<>();
+
     }
 
     public int getStepId() {
@@ -77,13 +79,6 @@ public class Step implements Serializable {
         this.stepName = stepName;
     }
 
-    public Date getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(Date arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
 
     public String getStory() {
         return story;
@@ -103,9 +98,8 @@ public class Step implements Serializable {
 
     public void addLike(User user) throws IllegalArgumentException {
         if (this.like.contains(user)) {
-            throw new IllegalArgumentException("User already liked this step");
+            throw new IllegalArgumentException("User didn't like this step");
         }
-
         this.like.add(user);
     }
 
@@ -122,5 +116,13 @@ public class Step implements Serializable {
 
     public void setPostDate(Date postDate) {
         this.postDate = postDate;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 }

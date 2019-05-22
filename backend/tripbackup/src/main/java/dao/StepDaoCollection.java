@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Journey;
+import domain.Message;
 import domain.Step;
 import domain.User;
 
@@ -76,6 +77,11 @@ public class StepDaoCollection implements StepDao {
                 return step;
             }
         }
+        return null;
+    }
+
+    @Override
+    public Step addCommentStep(Step s, Message m) {
         return null;
     }
 

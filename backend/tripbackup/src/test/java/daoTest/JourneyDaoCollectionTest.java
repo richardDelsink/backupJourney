@@ -32,8 +32,8 @@ public class JourneyDaoCollectionTest {
         Date startdate = cal.getTime();
         cal.add(Calendar.DAY_OF_YEAR, noOfDays);
         Date date = cal.getTime();
-        journey = new Journey("Canada","So hot",startdate,date,"Friends",0);
-        journey1 = new Journey("Germany","Nice beer",startdate,date,"Friends",0);
+        journey = new Journey("Canada","So hot",startdate,date,"Friends","Willem");
+        journey1 = new Journey("Germany","Nice beer",startdate,date,"Friends","Willem");
 
     }
 
@@ -64,6 +64,6 @@ public class JourneyDaoCollectionTest {
     @Test
     public void getJourneyByUser() {
         journeyDaoColl.add(journey);
-        assertThat(1,is(journeyDaoColl.getJourneyByUser(user.getId()).size()));
+        assertThat(1,is(journeyDaoColl.getJourneyByUser(user.getName()).size()));
     }
 }

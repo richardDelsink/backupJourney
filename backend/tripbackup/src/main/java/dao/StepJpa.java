@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Journey;
+import domain.Message;
 import domain.Step;
 import domain.User;
 import event.StepEvent;
@@ -37,6 +38,13 @@ public class StepJpa implements StepDao{
     }
 
     @Override
+    public Step addCommentStep(Step s, Message m) {
+        s.getMessages().add(m);
+        em.merge(s);
+        return s;
+    }
+
+    @Override
     public Step unlikeStep(Step s, User u) {
         s.removeLike(u);
         em.merge(s);
@@ -45,7 +53,6 @@ public class StepJpa implements StepDao{
 
     @Override
     public Step findStepById(int id) {
-
         return em.find(Step.class, id);
     }
 

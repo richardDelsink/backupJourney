@@ -38,10 +38,10 @@ public class MessageDaoCollectionTest {
         Date startdate = cal.getTime();
         cal.add(Calendar.DAY_OF_YEAR, noOfDays);
         Date date = cal.getTime();
-        journey = new Journey("Canada","So hot",startdate,date,"Friends",2);
-        step = new Step(journey,"Mont","Test",startdate,"There is no story");
-        comment = new Message(0,1,"vet goede spull te zien");
-        comment1 = new Message(0,2,"vet");
+        journey = new Journey("Canada","So hot",startdate,date,"Friends","Willem");
+        step = new Step(journey,"Mont","Test","There is no story");
+        comment = new Message(0,"Willem","vet goede spull te zien");
+        comment1 = new Message(0,"Willem2","vet");
     }
 
     @After

@@ -93,10 +93,10 @@ public class JourneyDaoJpaTest {
         cal.add(Calendar.DAY_OF_YEAR, noOfDays);
         java.util.Date date = cal.getTime();
 
-        canada = new Journey("Canada", "Going to Canada all alone",startdate,date,"friends",willem.getId());
-        usa = new Journey("Usa", "Going to America all alone",startdate,date,"friends",wesley.getId());
-        germany = new Journey("Germany", "Going to Germany all alone",startdate,date,"friends",willem.getId());
-        belgium = new Journey("Belgium", "Going to Belgium all alone",startdate,date,"friends",frank.getId());
+        canada = new Journey("Canada", "Going to Canada all alone",startdate,date,"friends",willem.getName());
+        usa = new Journey("Usa", "Going to America all alone",startdate,date,"friends",wesley.getName());
+        germany = new Journey("Germany", "Going to Germany all alone",startdate,date,"friends",willem.getName());
+        belgium = new Journey("Belgium", "Going to Belgium all alone",startdate,date,"friends",frank.getName());
     }
     @After
     public void tearDown() throws Exception {
@@ -106,7 +106,7 @@ public class JourneyDaoJpaTest {
     public void getJourneyByUser() {
         tx.begin();
         journeyDaoJpa.add(canada);
-        Journey j = journeyDaoJpa.getJourneyByUser(willem.getId()).get(0);
+        Journey j = journeyDaoJpa.getJourneyByUser(willem.getName()).get(0);
         tx.commit();
         assertThat("Canada", is(j.getJourneyName()));
     }

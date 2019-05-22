@@ -20,9 +20,9 @@ public class JourneyDaoJpa implements JourneyDao{
     }
 
     @Override
-    public List<Journey> getJourneyByUser(int i) {
+    public List<Journey> getJourneyByUser(String name) {
         TypedQuery<Journey> query = em.createNamedQuery("journey.getJourneyByUser", Journey.class);
-        query.setParameter("userId", i);
+        query.setParameter("userName", name);
         return query.getResultList();
     }
 
@@ -48,6 +48,13 @@ public class JourneyDaoJpa implements JourneyDao{
         query.setParameter("name", name);
         List<Journey> result = query.getResultList();
         return result.get(0);
+    }
+
+    @Override
+    public List<Journey> searchJourney(String journeyName) {
+        TypedQuery<Journey> query = em.createNamedQuery("journey.findByName", Journey.class);
+        query.setParameter("name", journeyName);
+        return query.getResultList();
     }
 
     public void setEm(EntityManager em) {

@@ -33,6 +33,6 @@ public class JourneyBean implements Serializable {
     }
 
     public ArrayList<Journey> getJourneys() {
-        return new ArrayList<>(journeyService.findByUsername(userId));
+        return new ArrayList<>(journeyService.findByUsername("Richard"));
     }
 }

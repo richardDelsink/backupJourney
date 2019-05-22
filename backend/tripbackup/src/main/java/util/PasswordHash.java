@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 
 public class PasswordHash {
+
     
     public static String stringToHash(String input) {
         String output = null;

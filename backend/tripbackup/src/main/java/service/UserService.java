@@ -16,6 +16,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.interceptor.Interceptors;
+import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import javax.ws.rs.NotFoundException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -25,7 +26,7 @@ import java.util.Base64;
 import java.util.List;
 
 @Stateless
-@DeclareRoles({"UserRole", "AdminRole"})
+//@DeclareRoles({"UserRole", "AdminRole"})
 @Interceptors(LoggingInterceptor.class)
 public class UserService {
 
@@ -34,26 +35,28 @@ public class UserService {
 
     @Inject
     private GroupDaoJPA groupDao;
+    @Inject
+    Pbkdf2PasswordHash pbkdf2Hash;
 
    /* @Inject
     private Event<UserEvent> userEvent;*/
-   @PermitAll
+   //@PermitAll
     public void addUser(User user) {
         if(user != null)
         {
-           user.setPassword(PasswordHash.stringToHash(user.getPassword()));
+           user.setPassword(pbkdf2Hash.generate(user.getPassword().toCharArray()));
            user.getGroup().add(groupDao.findByName(Group.USER_GROUP));
            userDao.add(user);
         }
     }
-    @RolesAllowed({"AdminRole"})
+    //@RolesAllowed({"AdminRole"})
     public void removeUser(User user){
         if(user != null)
         {
             userDao.remove(user);
         }
     }
-    @RolesAllowed({"AdminRole"})
+    //@RolesAllowed({"AdminRole"})
     public void removeUser(String name) {
         User user = userDao.findByName(name);
         if(user !=null)
@@ -62,12 +65,15 @@ public class UserService {
         }
     }
 
-    @PermitAll
+   //@PermitAll
     public User findByName(String name){
         return userDao.findByName(name);
     }
 
-    @RolesAllowed({"UserRole"})
+
+
+
+    //@PermitAll
     public List<User> getFollowing(String username)throws NotFoundException{
         User user = userDao.findByName(username);
 
@@ -77,7 +83,7 @@ public class UserService {
 
         return user.getFollowing();
     }
-    @RolesAllowed({"UserRole"})
+    //@PermitAll
     public List<User> getFollowers(String name) throws NotFoundException {
 
         User user = userDao.findByName(name);
@@ -89,10 +95,10 @@ public class UserService {
         return userDao.getFollowers(user);
     }
 
-    @RolesAllowed({"UserRole"})
+    //@PermitAll
     public void followUser(User user, String username)throws NotFoundException {
         User toFollow = userDao.findByName(username);
-        User user1 = userDao.findByName("Richard");
+        User user1 = userDao.findByName(user.getName());
 
         if (toFollow == null) {
             throw new NotFoundException("User " + username + " was not found");
@@ -100,7 +106,7 @@ public class UserService {
 
         userDao.followUser(user1, toFollow);
     }
-    @RolesAllowed({"UserRole"})
+    //@RolesAllowed({"UserRole"})
     public void unfollowUser(User user, String username)throws NotFoundException{
         User toUnfollow = userDao.findByName(username);
 
@@ -131,11 +137,11 @@ public class UserService {
     public UserService(){
 
     }
-    @PermitAll
+    //@PermitAll
     public void update(User user){
         userDao.update(user);
     }
-    @PermitAll
+    //@PermitAll
     public ArrayList<User> getUsers() {
         return userDao.getUsers();
     }

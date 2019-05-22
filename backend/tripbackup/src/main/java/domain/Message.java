@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "comment.getCommentsByStep", query = "SELECT c FROM Message c WHERE c.stepId = :stepId"),
-        @NamedQuery(name = "comment.getCommentsByUser", query = "SELECT c FROM Message c WHERE c.userId = :userId"),
+        @NamedQuery(name = "comment.getCommentsByUser", query = "SELECT c FROM Message c WHERE c.userName = :userName"),
         @NamedQuery(name = "comment.findByName", query = "SELECT c FROM Message c WHERE c.comment = :name")})
 @XmlRootElement
 public class Message implements Serializable {
@@ -18,7 +18,7 @@ public class Message implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int commentId;
     private int stepId;
-    private int userId;
+    private String userName;
     private String comment;
     @Temporal(TemporalType.TIMESTAMP)
     private Date postDate;
@@ -26,11 +26,11 @@ public class Message implements Serializable {
     public Message() {
     }
 
-    public Message(int stepId, int userId, String comment) {
+    public Message(int stepId, String userName, String comment) {
         this.stepId = stepId;
-        this.userId = userId;
+        this.userName = userName;
         this.comment = comment;
-        //this.postDate = new Date();
+        this.postDate = new Date();
     }
 
 
@@ -54,12 +54,12 @@ public class Message implements Serializable {
         this.commentId = messageId;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getComment() {

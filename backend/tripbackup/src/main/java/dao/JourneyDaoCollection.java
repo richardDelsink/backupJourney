@@ -36,6 +36,11 @@ public class JourneyDaoCollection implements JourneyDao{
     }
 
     @Override
+    public List<Journey> searchJourney(String journeyName) {
+        return null;
+    }
+
+    @Override
     public void update(Journey journey) {
        /* for (Journey j : journeys) {
             if (j.getJourneyId()==(journey.getJourneyId())) {
@@ -45,10 +50,10 @@ public class JourneyDaoCollection implements JourneyDao{
     }
 
     @Override
-    public List<Journey> getJourneyByUser(int i) {
+    public List<Journey> getJourneyByUser(String name) {
         List<Journey> journeyss = new ArrayList<>();
         for (Journey j : journeys) {
-            if (j.getUserId()==i) {
+            if (j.getUserName()==name) {
                 journeyss.add(j);
             }
         }

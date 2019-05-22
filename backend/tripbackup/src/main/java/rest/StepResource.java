@@ -1,19 +1,18 @@
 package rest;
 
+import auth.JWTStore;
 import domain.Journey;
 import domain.Step;
 import domain.User;
 import service.JourneyService;
+import service.MessageService;
 import service.StepService;
 import service.UserService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
+import javax.ws.rs.core.*;
 import java.security.Principal;
 import java.util.List;
 
@@ -30,6 +29,12 @@ public class StepResource {
     private StepService sS;
 
     @Inject
+    MessageService mS;
+
+    @Inject
+    JWTStore jwtStore;
+
+    @Inject
     private JourneyService jS;
 
     @GET
@@ -42,14 +47,14 @@ public class StepResource {
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    public Step createStep(Step step) {
+    public Response createStep(Step step) {
         sS.addStep(step);
-        return step;
+        return Response.ok().build();
     }
     @GET
-    @Path("search/{journeyname}")
+    @Path("getStep/{journeyname}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Step> getJourneyByUser(@PathParam("journeyname") String journeyname) {
+    public List<Step> getStepByJourney(@PathParam("journeyname") String journeyname) {
         Journey journey = jS.findByName(journeyname);
         return sS.findByJourney(journey);
     }
@@ -60,16 +65,15 @@ public class StepResource {
     }
 
 
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{id}/like")
-    public Response likeKweet(@PathParam("id") int id) {
+    @Path("/like/{id}")
+    public Response likeStep(@PathParam("id") int id, @HeaderParam("Authorization") String authorization) {
         try {
-            User user = getUserFromToken();
-            Step step =  sS.likeStep(user, id);
-
-            return Response.status(Response.Status.OK).entity(step).build();
+             sS.likeStep(id, this.jwtStore.getCredential(authorization.substring(7)).getCaller());
+            return Response.status(Response.Status.OK).build();
         } catch (NotFoundException e) {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         } catch (IllegalArgumentException e) {
@@ -81,13 +85,13 @@ public class StepResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{id}/unlike")
-    public Response unlikeKweet(@PathParam("id") int id) {
+    @Path("/unlike/{id}")
+    public Response unlikeStep(@PathParam("id") int id, @HeaderParam("Authorization") String authorization) {
         try {
-            User user = getUserFromToken();
-            Step step =  sS.unlikeStep(user, id);
 
-            return Response.status(Response.Status.OK).entity(step).build();
+            sS.unlikeStep(id, this.jwtStore.getCredential(authorization.substring(7)).getCaller());
+
+            return Response.status(Response.Status.OK).build();
         } catch (NotFoundException e) {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         } catch (IllegalArgumentException e) {
@@ -97,10 +101,5 @@ public class StepResource {
         }
     }
 
-    private User getUserFromToken() {
-        Principal principal = securityContext.getUserPrincipal();
-        String username = principal.getName();
 
-        return uS.findByName(username);
-    }
 }

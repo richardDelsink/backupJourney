@@ -2,14 +2,13 @@ package service;
 import dao.GroupDaoJPA;
 import dao.JPA;
 import dao.JourneyDaoJpa;
-import domain.Group;
-import domain.Journey;
-import domain.User;
+import domain.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
+import javax.xml.stream.events.Comment;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +26,12 @@ public class StartUp {
 
     @Inject
     private JourneyService journeyService;
+
+    @Inject
+    private StepService stepService;
+
+    @Inject
+    private MessageService messageService;
 
     public StartUp(){
 
@@ -50,6 +55,9 @@ public class StartUp {
         service.addUser(bill);
         service.addUser(will);
 
+        service.followUser(wesley, richard.getName());
+        service.followUser(bill, richard.getName());
+        service.followUser(will, richard.getName());
         String dateInString = "10-02-2019";
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
         Date date = null;
@@ -60,10 +68,10 @@ public class StartUp {
         }
 
         // make journeys
-        Journey canada = new Journey("Canada","Going to Canada, feeling so happy",date,date,"friends",1);
-        Journey france = new Journey("France","Going to France",date,date,"friends",2);
-        Journey germany = new Journey("Germany","Going to Germany, beer!!!!!!",date,date,"friends",3);
-        Journey newYork = new Journey("New York","Going to New York, give me that pizza",date,date,"friends",4);
+        Journey canada = new Journey("Canada","Going to Canada, feeling so happy",date,date,"friends","Richard");
+        Journey france = new Journey("France","Going to France",date,date,"friends","Richard");
+        Journey germany = new Journey("Germany","Going to Germany, beer!!!!!!",date,date,"friends","Bill");
+        Journey newYork = new Journey("New York","Going to New York, give me that pizza",date,date,"friends","Bill");
 
         journeyService.addJourney(canada);
         journeyService.addJourney(france);
@@ -72,7 +80,26 @@ public class StartUp {
 
 
         // make steps
-        // make comments
+        Step stepCanada = new Step(canada,"Vancouver","Stanley Park","Whahahah what is this super");
+        Step stepFrance = new Step(france,"Paris","Louvre Museum","Artsey");
+        Step stepGermany = new Step(germany,"Berlin","Brandenburg Gate","What a big gate there");
+
+        stepService.addStep(stepCanada);
+        stepService.addStep(stepFrance);
+        stepService.addStep(stepGermany);
+            // make comments
+
+        Message mCanada = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"vet");
+        Message mCanada2 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),bill.getName(),"nice");
+        Message mCanada3 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"lekker");
+
+        messageService.addComment(mCanada);
+        messageService.addComment(mCanada2);
+        messageService.addComment(mCanada3);
+
+       // stepService.addCommentToStep(stepCanada, mCanada);
+        //stepService.addCommentToStep(stepCanada, mCanada3);
+       // stepService.addCommentToStep(stepCanada2, mCanada2);
 
     }
 }

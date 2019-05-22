@@ -58,7 +58,7 @@ public class JourneyRestAssureTest {
         //JourneyJson jj = new JourneyJson("Canada", "Going to Canada all alone","friends",1);
 
 
-        Journey journey = new Journey("Canada", "Going to Canada all alone",ss,date,"friends",1);
+        Journey journey = new Journey("Canada", "Going to Canada all alone",ss,date,"friends","Willem");
 
                 given().
                     contentType("application/json").

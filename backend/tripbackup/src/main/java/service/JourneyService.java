@@ -13,21 +13,21 @@ import javax.inject.Inject;
 import java.util.List;
 
 @Stateless
-@DeclareRoles({"UserRole", "AdminRole"})
+//@DeclareRoles({"UserRole", "AdminRole"})
 public class JourneyService {
 
     @Inject @JPA
     private JourneyDao journeyDao;
 
-    @PermitAll
+   // @PermitAll
     public void addJourney(Journey journey){
         journeyDao.add(journey);
     }
-    @RolesAllowed({"AdminRole"})
+   // @RolesAllowed({"AdminRole"})
     public void removeJourney(Journey journey){
         journeyDao.remove(journey);
     }
-    @RolesAllowed({"AdminRole"})
+   // @RolesAllowed({"AdminRole"})
     public void removeJourney(String name) {
         Journey journey = journeyDao.findByName(name);
         if(journey != null)
@@ -35,13 +35,13 @@ public class JourneyService {
             journeyDao.remove(journey);
         }
     }
-    @PermitAll
+    //@PermitAll
     public Journey findByName(String name){
         return journeyDao.findByName(name);
     }
-    @PermitAll
-    public List<Journey> findByUsername(int i) {
-        return journeyDao.getJourneyByUser(i);
+   // @PermitAll
+    public List<Journey> findByUsername(String name) {
+        return journeyDao.getJourneyByUser(name);
     }
 
     public JourneyService() {

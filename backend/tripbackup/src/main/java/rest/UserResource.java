@@ -1,5 +1,6 @@
 package rest;
 
+
 import domain.User;
 import service.UserService;
 
@@ -7,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
+import java.net.URI;
 import java.security.Principal;
 import java.util.List;
 
@@ -20,25 +22,38 @@ public class UserResource {
     @Inject
     private UserService uS;
 
+
+    @Context
+    UriInfo uriInfo;
+
     @GET
-    @Path("{name}")
+    @Path("get/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User getUser(@PathParam("name") String name) {
-        return uS.findByName(name);
+    public Response getUser(@PathParam("name") String name) {
+        User u = uS.findByName(name);
+        if(u.getLinks().isEmpty()) {
+            u.addLink(u.getName(),getUriSelf(uriInfo, u),"GET");
+            u.addLink("journey",getUriJourney(uriInfo, u),"GET");
+        }
+        return Response.ok(u).build();
     }
 
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    public User createUser(User user) {
+    @Path("create")
+    public Response createUser(User user) {
+        final URI selfUri = uriInfo.getBaseUriBuilder().path(UserResource.class).path(UserResource.class, "createUser").build();
+        //user.getLinks().put("self", selfUri);
         uS.addUser(user);
-        return user;
+        return Response.created(selfUri).build();
     }
 
     @DELETE
-    @Path("{name}")
-    public void deleteUser(@PathParam("name")String name) {
+    @Path("delete/{name}")
+    public Response deleteUser(@PathParam("name")String name) {
         uS.removeUser(name);
+        return Response.ok().build();
     }
 
     @GET
@@ -47,6 +62,12 @@ public class UserResource {
     public Response getFollowers(@PathParam("username") String name) {
         try {
             List<User> followers = uS.getFollowers(name);
+            for(User u :followers){
+                if(u.getLinks().isEmpty()) {
+                    u.addLink(u.getName(), getUriSelf(uriInfo, u), "GET");
+                    u.addLink("journey", getUriJourney(uriInfo, u),"GET");
+                }
+            }
             return Response.status(Response.Status.OK).entity(new GenericEntity<List<User>>(followers) {}).build();
         } catch (NotFoundException e) {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
@@ -73,6 +94,7 @@ public class UserResource {
         }
 
     }
+
     @GET
     @Path("{username}/following")
     @Produces(MediaType.APPLICATION_JSON)
@@ -110,4 +132,24 @@ public class UserResource {
 
         return uS.findByName(username);
     }
+
+    private String getUriJourney(UriInfo uriInfo, User user){
+        String uri = uriInfo.getBaseUriBuilder()
+                .path(JourneyResource.class)
+                .path(JourneyResource.class, "getJourneyByUser")
+                .resolveTemplate("id", user.getId())
+                .build()
+                .toString();
+        return uri;
+    }
+    private String getUriSelf(UriInfo uriInfo, User user)
+    {
+        String uri = uriInfo.getBaseUriBuilder()
+            .path(UserResource.class)
+            .path("get/"+user.getName())
+            .build()
+            .toString();
+        return uri;
+    }
+
 }

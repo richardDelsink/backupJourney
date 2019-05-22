@@ -1,5 +1,6 @@
 package rest;
 
+import auth.JWTStore;
 import domain.Message;
 import domain.Step;
 import service.MessageService;
@@ -9,6 +10,8 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.net.URI;
 import java.util.List;
 
 @Path("Message")
@@ -31,9 +34,10 @@ public class MessageResource {
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    public Message createComment(Message comment) {
+    public Response createComment(Message comment) {
         mS.addComment(comment);
-        return comment;
+        URI id = URI.create(comment.getUserName());
+        return Response.created(id).build();
     }
     @GET
     @Path("search/{comments}")

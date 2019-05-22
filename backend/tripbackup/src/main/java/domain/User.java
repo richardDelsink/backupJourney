@@ -1,10 +1,12 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.net.URI;
+import java.util.*;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -30,8 +32,13 @@ public class User implements Serializable {
     private String distance;
     private String temperature;
     @OneToMany()
+    @JsonIgnore
     private List<User> following;
     private String password;
+
+    @Transient
+    private List<Link> links = new ArrayList<>();
+
 
     @JoinTable(name = "USERS_GROUPS",
             joinColumns
@@ -42,7 +49,9 @@ public class User implements Serializable {
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private Collection<Group> group = new ArrayList<>();
 
-    public User(){}
+    public User() {
+    }
+
     public User(String photo, String name, String city, String about, String email, String personalLink, Boolean privacy, String distance, String temperature, String password) {
         this.photo = photo;
         this.name = name;
@@ -167,6 +176,7 @@ public class User implements Serializable {
         }
         this.following.remove(user);
     }
+
     public Collection<Group> getGroup() {
         return group;
     }
@@ -174,10 +184,27 @@ public class User implements Serializable {
     public void deleteGroup() {
         group.clear();
     }
+
     public void setGroup(Collection<Group> group) {
         this.group = group;
     }
 
+    public List<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+
+    public void addLink(String rel, String url,String type)
+    {
+        Link link = new Link();
+        link.setLink(url);
+        link.setType(type);
+        link.setRel(rel);
+        links.add(link);
+    }
 }
 
 

@@ -17,9 +17,14 @@ public class MessageService {
     @Inject @JPA
     private MessageDao commentDao;
 
+    @Inject
+     private StepService stepService;
+
     @Interceptors(MessageInterceptor.class)
     public void addComment(Message comment){
-        commentDao.add(comment);
+        Message m = new Message(comment.getStepId(),comment.getUserName(), comment.getComment());
+        commentDao.add(m);
+        stepService.addCommentToStep(stepService.findStepById(comment.getStepId()),m);
     }
 
     public void removeComment(Message comment){

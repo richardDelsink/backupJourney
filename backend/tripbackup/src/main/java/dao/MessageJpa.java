@@ -25,7 +25,7 @@ public class MessageJpa implements MessageDao{
     @Override
     public List<Message> getComments(User user) {
         TypedQuery<Message> query = em.createNamedQuery("comment.getCommentsByUser", Message.class);
-        query.setParameter("userId", user.getId());
+        query.setParameter("userName", user.getName());
         return query.getResultList();
     }
 

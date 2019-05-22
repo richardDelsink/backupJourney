@@ -1,0 +1,36 @@
+
+  <div class="container_step">
+  <div class="jj"><div class="dd">{{stepResults[0].journey.journeyName}}</div></div>
+  <div class="lik"><div class="cc">{{likeCounter}}</div><div class="hh"> <img src="../../../assets/h.png" width="32"></div><div class="ll">Likes</div></div>
+  <div class="card" *ngFor="let step of stepResults">
+    <h1>{{step.stepName}}</h1>
+    <h4>{{step.location}}</h4>
+    <h4>{{step.postDate}}</h4>
+    <h4>{{step.story}}</h4>
+    <button class="like" (click)="addLikes(step.stepId)">Like</button>
+    <button class="comment" (click)="toggle()">Comment</button>
+    <div class="createStep">
+      <form *ngIf="show2"[formGroup]="stepForm" (ngSubmit)="creatSteps(stepResults[0].journey)">
+        <input class="createComment" formControlName="location" placeholder="location" value="">
+        <input class="createComment" formControlName="stepName" placeholder="step name" value="">
+        <input class="createComment"  formControlName="story" placeholder="story" value="">
+        <input class="addStep" type="submit"  value="Add step" />
+      </form>
+    </div>
+    <hr>
+    <div *ngIf="show">
+      <div class="newComment">
+        <form class="commentForm" [formGroup]="commentForm" (ngSubmit)="creatComment(step.stepId, userName)">
+          <input class="createComment" formControlName="comment" value="">
+          <input class="newComment" type="submit" value="+" />
+        </form>
+      </div>
+      <h5 *ngFor="let message of step.messages.reverse()"><b>{{message.userName}}</b>&nbsp;{{message.comment}}<br><h6>{{message.postDate}}</h6></h5>
+    </div>
+  </div>
+    <button class="stepButton" (click)="toggle2()">+</button>
+  </div>
+
+
+
+

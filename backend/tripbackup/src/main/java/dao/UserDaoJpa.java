@@ -1,15 +1,15 @@
 package dao;
 
-import domain.Group;
-import domain.User;
-import event.UserEvent;
+        import domain.Group;
+        import domain.User;
+        import event.UserEvent;
 
-import javax.ejb.Stateless;
-import javax.enterprise.event.Observes;
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+        import javax.ejb.Stateless;
+        import javax.enterprise.event.Observes;
+        import javax.persistence.*;
+        import java.util.ArrayList;
+        import java.util.Collection;
+        import java.util.List;
 
 
 
@@ -72,9 +72,9 @@ public class UserDaoJpa implements UserDao{
 
     @Override
     public void remove(User user) {
-       User u = em.merge(user);
-       u.deleteGroup();
-       em.remove(u);
+        User u = em.merge(user);
+        u.deleteGroup();
+        em.remove(u);
     }
 
     @Override
@@ -90,10 +90,10 @@ public class UserDaoJpa implements UserDao{
         return result.get(0);
     }
 
-   /* public void addUserEvent(@Observes UserEvent event){
-        User user = event.getUser();
-        em.persist(user);
-    }*/
+    /* public void addUserEvent(@Observes UserEvent event){
+         User user = event.getUser();
+         em.persist(user);
+     }*/
     public void setEm(EntityManager em) {
         this.em = em;
     }
