@@ -34,6 +34,7 @@ public class AuthResource {
     @Inject
     AuthService authService;
 
+
     @POST
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -51,27 +52,25 @@ public class AuthResource {
         }
     }
 
-    /*@POST
+    @POST
     @Path("/register")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Create a user")
     public Response add(User user) {
         try {
-            authService.(user);
+            authService.addUser(user);
         } catch (Exception ex) {
             throw new WebApplicationException(ex.getMessage(), Response.Status.BAD_REQUEST);
         }
-        URI id = URI.create(user.getUsername());
+        URI id = URI.create(user.getName());
         return Response.created(id).build();
     }
 
     @PUT
     @Path("/register/verify/{key}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Create a user")
     public Response add(@PathParam("key") String key) {
         authService.confirmEmail(key);
         return Response.ok().build();
-    }*/
+    }
 
 }

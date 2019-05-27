@@ -36,6 +36,7 @@ public class User implements Serializable {
     private List<User> following;
     private String password;
 
+    private boolean verified = false;
     @Transient
     private List<Link> links = new ArrayList<>();
 
@@ -187,6 +188,14 @@ public class User implements Serializable {
 
     public void setGroup(Collection<Group> group) {
         this.group = group;
+    }
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 
     public List<Link> getLinks() {

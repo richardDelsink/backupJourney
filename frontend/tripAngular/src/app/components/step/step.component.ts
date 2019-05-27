@@ -32,10 +32,15 @@ export class StepComponent implements OnInit {
       stepName: ['', Validators.required],
       story: ['', Validators.required]
     });
+    this.stepService.newSteps.subscribe(newStep => {
+      this.stepResults.push(newStep);
+    });
+
   }
 
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.stepResults = null;
     delete this.stepResults;
     this.getStepsFromJourney();
     this.userName = localStorage.getItem('username');
@@ -57,7 +62,6 @@ export class StepComponent implements OnInit {
       this.commentService.createComment({comment: this.commentForm.controls.comment.value, stepId, userName}).subscribe(data => {
         this.getStepsFromJourney();
         this.commentForm.reset();
-        console.log('adasda', JSON.stringify(data));
     }, error => {console.log('there was an error'); });
     }
   }
@@ -69,6 +73,7 @@ export class StepComponent implements OnInit {
         story: this.stepForm.controls.story.value
       }).subscribe(data => {
         this.getStepsFromJourney();
+        this.stepForm.reset();
         console.log('wtf is this ', JSON.stringify(data));
       }, error => {
         console.log('there was an error');
@@ -86,7 +91,7 @@ export class StepComponent implements OnInit {
     if (this.checkLoggedIn()) {
       this.stepService.addLike(stepId).subscribe(data => {
         this.getStepsFromJourney();
-        //this.likeCount();
+        // this.likeCount();
       }, error => {this.unLikes(stepId); });
     }
   }
@@ -95,7 +100,7 @@ export class StepComponent implements OnInit {
     if (this.checkLoggedIn()) {
       this.stepService.unLike(stepId).subscribe(data => {
         this.getStepsFromJourney();
-        //this.likeCount();
+        // this.likeCount();
       }, error => {});
     }
   }

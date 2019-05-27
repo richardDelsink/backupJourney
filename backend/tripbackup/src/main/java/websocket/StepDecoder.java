@@ -16,19 +16,23 @@ import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
 
 import domain.Step;
-import service.UserService;
+import service.JourneyService;
 
 public class StepDecoder implements Decoder.Text<Step> {
 
+    @Inject
+    private JourneyService journeyService;
 
     @Override
     public Step decode(final String textMessage) throws DecodeException {
         Step step = new Step();
         JsonObject jsonObject = Json.createReader(new StringReader(textMessage)).readObject();
-        step.setStepId(jsonObject.getInt("id"));
+        step.setStepId(jsonObject.getInt("stepId"));
         step.setStepName(jsonObject.getString("stepName"));
         step.setLocation(jsonObject.getString("location"));
         step.setStory(jsonObject.getString("story"));
+        step.setPostDate(new Date(jsonObject.getString("postDate")));
+       // step.setJourney(journeyService.findByName(jsonObject.getString("journeyName")).getJourneyName());
         return step;
     }
 

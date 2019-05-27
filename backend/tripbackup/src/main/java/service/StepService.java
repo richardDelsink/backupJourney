@@ -32,7 +32,7 @@ public class StepService {
 
         Step s = new Step(step.getJourney(),step.getLocation(),step.getStepName(),step.getStory());
         User u = userService.findByName(s.getJourney().getUserName());
-        stepDao.add(step);
+        this.stepDao.add(step);
         stepEvent.fire(new StepEvent(s,u));
     }
 

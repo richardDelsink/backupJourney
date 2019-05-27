@@ -88,10 +88,10 @@ public class JWTStore {
                 throw new Exception("Not Verified");
             }
 
-            if (!isTokenTimeValid(claimsSet.getIssueTime(), claimsSet.getExpirationTime())) {
+         //   if (!isTokenTimeValid(claimsSet.getIssueTime(), claimsSet.getExpirationTime())) {
                 // TODO: Give proper message to client / mapping the exception to be able show the message.
-                throw new Exception("Expired Token");
-            }
+             //   throw new Exception("Expired Token");
+           // }
 
             JSONObject realmAccess = (JSONObject) claimsSet.getClaim("realm_access");
             JSONArray groupArray = (JSONArray) realmAccess.get("groups");

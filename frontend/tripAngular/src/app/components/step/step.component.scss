@@ -11,7 +11,7 @@ body {
 .container_step{
   display: inline-block;
   height:100vh;
-  width: 30%;
+  width: 500px;
   background: $white;
   overflow: scroll;
   z-index: 1;
@@ -110,14 +110,13 @@ body {
   text-align: left;
   margin: 50px 30px 50px 30px;
   width: 90%;
-  min-hight: 100%;
+  height: 200px;
   background: #fff;
 }
 .createStep {
   width: 500px;
   z-index: 0;
   height: 500px;
-  position: absolute;
   margin-top: 100px;
   margin-right: 1000px;
 }

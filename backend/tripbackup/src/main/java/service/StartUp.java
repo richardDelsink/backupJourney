@@ -45,11 +45,15 @@ public class StartUp {
         groupDao.add(userGroup);
 
         // make users, 1 admin
-        User richard = new User( "","Richard","","","","",true,"","", "richard");
+        User richard = new User( "","Richard","","","rd.richard@hotmail.com","",true,"","", "richard");
         User wesley = new User( "","Wesley","","","","",true,"","", "wesley");
         User bill = new User( "","Bill","","","","",true,"","", "bill");
         User will = new User( "","Will","","","","",true,"","", "will");
         richard.getGroup().add(adminGroup);
+        richard.setVerified(true);
+        wesley.setVerified(true);
+        bill.setVerified(true);
+        will.setVerified(true);
         service.addUser(richard);
         service.addUser(wesley);
         service.addUser(bill);
@@ -58,6 +62,7 @@ public class StartUp {
         service.followUser(wesley, richard.getName());
         service.followUser(bill, richard.getName());
         service.followUser(will, richard.getName());
+        service.followUser(richard, richard.getName());
         String dateInString = "10-02-2019";
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
         Date date = null;
@@ -89,17 +94,17 @@ public class StartUp {
         stepService.addStep(stepGermany);
             // make comments
 
-        Message mCanada = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"vet");
-        Message mCanada2 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),bill.getName(),"nice");
-        Message mCanada3 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"lekker");
+        //Message mCanada = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"vet");
+        //Message mCanada2 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),bill.getName(),"nice");
+        //Message mCanada3 = new Message(stepService.findByName(stepCanada.getStepName()).getStepId(),richard.getName(),"lekker");
 
-        messageService.addComment(mCanada);
-        messageService.addComment(mCanada2);
-        messageService.addComment(mCanada3);
+        //messageService.addComment(mCanada);
+        //messageService.addComment(mCanada2);
+        //messageService.addComment(mCanada3);
 
-       // stepService.addCommentToStep(stepCanada, mCanada);
-        //stepService.addCommentToStep(stepCanada, mCanada3);
-       // stepService.addCommentToStep(stepCanada2, mCanada2);
+        //stepService.addCommentToStep(stepCanada, mCanada);
+       // stepService.addCommentToStep(stepCanada, mCanada3);
+        //stepService.addCommentToStep(stepCanada2, mCanada2);
 
     }
 }

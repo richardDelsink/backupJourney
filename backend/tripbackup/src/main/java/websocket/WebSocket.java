@@ -73,16 +73,17 @@ public class WebSocket {
 
     public void sendToAllSessions(@Observes StepEvent stepEvent) {
         for (User user : stepEvent.getUser().getFollowing()) {
-            if (sessions.get(user.getName()) != null) {
-                for (Session session : sessions.get(user.getName())) {
-                    try {
-                        session.getBasicRemote().sendObject(stepEvent.getStep());
-                    } catch (IOException | EncodeException ex) {
-                        Logger.getLogger(WebSocket.class.getName()).log(Level.SEVERE, null, ex);
+                if (sessions.get(user.getName()) != null) {
+                    for (Session session : sessions.get(user.getName())) {
+                        try {
+                            session.getBasicRemote().sendObject(stepEvent.getStep());
+                        } catch (IOException | EncodeException ex) {
+                            Logger.getLogger(WebSocket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
                 }
             }
-        }
+
     }
 
     @OnError

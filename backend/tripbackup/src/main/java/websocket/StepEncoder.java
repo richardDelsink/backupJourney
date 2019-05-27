@@ -18,10 +18,12 @@ public class StepEncoder implements Encoder.Text<Step> {
     @Override
     public String encode(Step step) throws EncodeException {
         return Json.createObjectBuilder()
-                .add("id", step.getStepId())
+                .add("stepId", step.getStepId())
                 .add("stepName", step.getStepName())
                 .add("location", step.getLocation())
                 .add("story", step.getStory())
+                .add("postDate", step.getPostDate().toString())
+                //.add("journeyId", step.getJourney().getJourneyId())
                 .build().toString();
 
     }

@@ -1,15 +1,36 @@
 import { Injectable, Inject } from '@angular/core';
 import {Step} from '../../models/step';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {Observable, Subject, throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {WebsocketService} from '../websocket/websocket.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StepService {
 
-  constructor(private http: HttpClient, @Inject('API_URL') private API_URL: string) {
+  public newSteps: Subject<Step>;
+
+  constructor(private http: HttpClient, @Inject('API_URL') private API_URL: string, wsService: WebsocketService) {
+    this.newSteps = wsService.connect('ws://localhost:8080/TripJourney/websocket/' + localStorage.getItem('token')).pipe(map(
+      (response: MessageEvent): Step => {
+        const data = JSON.parse(response.data);
+        return {
+          stepId: data.stepId,
+          stepName: data.stepName,
+          location: data.location,
+          postDate: data.postDate,
+          story: data.story,
+          like: null,
+          whoCanSee: '',
+          userName: '',
+          links: null,
+          messages: null,
+          journey: null
+        };
+      }
+    )) as Subject<Step>;
   }
 
   getStepByJourneyName(journeyName: string): Observable<Step[]> {

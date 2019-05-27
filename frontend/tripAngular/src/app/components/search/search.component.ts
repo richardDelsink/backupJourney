@@ -28,7 +28,6 @@ export class SearchComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.getSearchResults();
     this.userName = localStorage.getItem('username');
-
   }
   getSearchResults() {
     if (this.checkLoggedIn()) {

@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 import { SearchComponent } from './components/search/search.component';
 import { StepComponent } from './components/step/step.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponent } from './components/register/register.component';
+import { VerifyComponent } from './components/verify/verify.component';
 
 
 
@@ -24,6 +26,8 @@ import { HeaderComponent } from './components/header/header.component';
     SearchComponent,
     StepComponent,
     HeaderComponent,
+    RegisterComponent,
+    VerifyComponent,
    ],
   imports: [
     BrowserModule,
