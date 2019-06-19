@@ -1,17 +1,17 @@
 package restTest;
 
-import domain.Step;
+/*import domain.Step;
 import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 public class StepRestAssureTest {
 
 
-    @Before
+  /*  @Before
     public void setUp() throws Exception {
         RestAssured.port = 8080;
         RestAssured.baseURI = "http://localhost";
@@ -56,5 +56,5 @@ public class StepRestAssureTest {
 
     @Test
     public void unlikeStep() {
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 package restTest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+/*import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.Journey;
 import domain.User;
 import io.restassured.RestAssured;
@@ -18,11 +18,11 @@ import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.EncoderConfig.encoderConfig;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 public class JourneyRestAssureTest {
 
-    @Before
+  /*  @Before
     public void setUp() throws Exception {
         RestAssured.port = 8080;
         RestAssured.baseURI = "http://localhost";
@@ -89,5 +89,5 @@ public class JourneyRestAssureTest {
                 delete("/Journey/delete/{name}").
                 then().log().all().
                 statusCode(500);
-    }
+    }*/
 }

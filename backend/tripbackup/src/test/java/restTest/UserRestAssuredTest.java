@@ -1,16 +1,16 @@
 package restTest;
 
-import domain.User;
+/*import domain.User;
 import io.restassured.RestAssured;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;*/
 
 public class UserRestAssuredTest {
 
 
-    public UserRestAssuredTest() {
+   /* public UserRestAssuredTest() {
     }
 
     @Before
@@ -147,5 +147,5 @@ public class UserRestAssuredTest {
                 post("/User/{username}/unfollow").
                 then().
                 statusCode(500);
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 package daoTest;
 
-import dao.JourneyDaoJpa;
+/*import dao.JourneyDaoJpa;
 import dao.UserDaoJpa;
 import domain.Journey;
 import domain.User;
@@ -23,11 +23,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 public class JourneyDaoJpaTest {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Journey");
+   /* EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
     private EntityManager em;
     private EntityTransaction tx;
     private JourneyDaoJpa journeyDaoJpa;
@@ -162,5 +162,5 @@ public class JourneyDaoJpaTest {
         journeyDaoJpa.add(belgium);
         tx.commit();
         assertThat("Belgium", is(journeyDaoJpa.findByName(belgium.getJourneyName()).getJourneyName()));
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 package daoTest;
 
-import dao.UserDaoJpa;
+/*import dao.UserDaoJpa;
 import domain.User;
 import org.junit.After;
 import org.junit.Before;
@@ -17,11 +17,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 public class UserDaoJpaTest {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Journey");
+    /*EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
     private EntityManager em;
     private EntityTransaction tx;
     private UserDaoJpa userDaoJPA;
@@ -135,6 +135,6 @@ public class UserDaoJpaTest {
         tx.commit();
         assertThat(user, is(userDaoJPA.findByName("Willem")));
     }
-
+*/
 
 }
