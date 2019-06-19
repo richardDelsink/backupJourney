@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7705522-03ba-4204-b7e3-64499bbcbd92" name="Default Changelist" comment="" />
+    <list default="true" id="a7705522-03ba-4204-b7e3-64499bbcbd92" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bean/UserBean.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,27 +65,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auth/JWTAuthenticationMechanism.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auth/JWTStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/auth/JWTCredential.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -110,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/AuthService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="1071">
               <caret line="87" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,11 +100,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/EmailSender.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="851">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bean/UserBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.6.0/javax.mail-1.6.0.jar!/com/sun/mail/smtp/SMTPTransport.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="1376" column="73" lean-forward="true" selection-start-line="1376" selection-start-column="73" selection-end-line="1376" selection-end-column="73" />
+            <state relative-caret-position="21828">
+              <caret line="1376" column="73" selection-start-line="1376" selection-start-column="73" selection-end-line="1376" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -202,12 +204,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/auth/JWTAuthenticationMechanism.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/util/PasswordHash.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
@@ -258,6 +259,7 @@
         <option value="$PROJECT_DIR$/src/main/java/service/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/JWTStore.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/EmailSender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bean/UserBean.java" />
       </list>
     </option>
   </component>
@@ -286,8 +288,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,86 +319,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="websocket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
@@ -417,6 +338,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,6 +654,7 @@
       <workItem from="1558466381480" duration="32604000" />
       <workItem from="1558897839560" duration="28767000" />
       <workItem from="1558936220299" duration="1793000" />
+      <workItem from="1560965608345" duration="48000" />
     </task>
     <servers />
   </component>
@@ -767,7 +691,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377912000" />
+    <option name="totallyTimeSpent" value="377960000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -779,10 +703,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49503312" visible="true" weight="0.10214626" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49503312" visible="true" weight="0.10181237" />
       <window_info id="Structure" order="1" sideWeight="0.5033113" side_tool="true" weight="0.2552674" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -902,17 +826,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/StepDaoCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="20" />
-          <folding>
-            <element signature="e#1821#1822#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/MessageJpa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1062,13 +975,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1324,10 +1230,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rest/StepResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.6.0/javax.mail-1.6.0.jar!/com/sun/mail/smtp/SMTPTransport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21828">
+          <caret line="1376" column="73" selection-start-line="1376" selection-start-column="73" selection-end-line="1376" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -1358,27 +1281,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.6.0/javax.mail-1.6.0.jar!/com/sun/mail/smtp/SMTPTransport.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/EmailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="1376" column="73" lean-forward="true" selection-start-line="1376" selection-start-column="73" selection-end-line="1376" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="328">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/EmailSender.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="851">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bean/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
