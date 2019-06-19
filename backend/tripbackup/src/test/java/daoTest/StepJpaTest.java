@@ -1,6 +1,6 @@
 package daoTest;
 
-import dao.JourneyDaoJpa;
+/*import dao.JourneyDaoJpa;
 import dao.StepJpa;
 import dao.UserDaoJpa;
 import domain.Journey;
@@ -22,10 +22,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;*/
 
 public class StepJpaTest {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
+  /*  EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
     private EntityManager em;
     private EntityTransaction tx;
     private StepJpa stepDaoJpa;
@@ -248,5 +248,5 @@ public class StepJpaTest {
         stepDaoJpa.add(stepCanada);
         tx.commit();
         assertThat(stepCanada.getStepName(),is(stepDaoJpa.findByName(stepCanada.getStepName()).getStepName()));
-    }
+    }*/
 }
