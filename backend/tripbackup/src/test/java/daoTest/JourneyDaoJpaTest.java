@@ -27,7 +27,7 @@ import static org.junit.Assert.*;
 
 public class JourneyDaoJpaTest {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Journey");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
     private EntityManager em;
     private EntityTransaction tx;
     private JourneyDaoJpa journeyDaoJpa;

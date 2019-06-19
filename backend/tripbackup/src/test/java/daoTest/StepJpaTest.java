@@ -25,7 +25,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class StepJpaTest {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Journey");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("t");
     private EntityManager em;
     private EntityTransaction tx;
     private StepJpa stepDaoJpa;
