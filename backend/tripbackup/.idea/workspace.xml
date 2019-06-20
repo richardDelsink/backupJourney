@@ -115,12 +115,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="80" column="35" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+            <state relative-caret-position="483">
+              <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1687#1688#0" expanded="true" />
                 <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#1907#1908#0" expanded="true" />
                 <element signature="e#1937#1938#0" expanded="true" />
                 <element signature="e#2388#2389#0" expanded="true" />
                 <element signature="e#2416#2417#0" expanded="true" />
@@ -657,7 +658,7 @@
       <workItem from="1558466381480" duration="32604000" />
       <workItem from="1558897839560" duration="28767000" />
       <workItem from="1558936220299" duration="1793000" />
-      <workItem from="1560965608345" duration="4791000" />
+      <workItem from="1560965608345" duration="5315000" />
     </task>
     <servers />
   </component>
@@ -694,7 +695,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="382703000" />
+    <option name="totallyTimeSpent" value="383227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1282,12 +1283,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="80" column="35" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+        <state relative-caret-position="483">
+          <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1687#1688#0" expanded="true" />
             <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1907#1908#0" expanded="true" />
             <element signature="e#1937#1938#0" expanded="true" />
             <element signature="e#2388#2389#0" expanded="true" />
             <element signature="e#2416#2417#0" expanded="true" />
