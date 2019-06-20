@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7705522-03ba-4204-b7e3-64499bbcbd92" name="Default Changelist" comment="" />
+    <list default="true" id="a7705522-03ba-4204-b7e3-64499bbcbd92" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/StartUp.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,24 +67,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/JourneyDaoJpaTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/restTest/JourneyRestAssureTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/restTest/MessageRestAssureTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -112,7 +98,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-401">
@@ -131,28 +117,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/MessageJpaTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="248" column="7" selection-start-line="248" selection-start-column="7" selection-end-line="248" selection-end-column="7" />
+            <state relative-caret-position="396">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1258">
+              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/StepJpaTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="748">
+              <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDaoJpaTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="408">
+              <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/StepDaoCollection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -189,14 +193,12 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDaoJpa.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/websocket/JourneyDecoder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/websocket/JourneyEncoder.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/JourneyDaoCollectionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/StepDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/StepDaoCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/MessageJpa.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/StepJpa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/MessageResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/MessageService.java" />
@@ -220,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/RegistrationJpa.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/Registration.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/AuthResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/StartUp.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/RegistrationKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/auth/JWTStore.java" />
@@ -235,6 +236,9 @@
         <option value="$PROJECT_DIR$/src/test/java/restTest/StepRestAssureTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/restTest/UserRestAssuredTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/StartUp.java" />
       </list>
     </option>
   </component>
@@ -302,7 +306,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
@@ -658,7 +662,7 @@
       <workItem from="1558466381480" duration="32604000" />
       <workItem from="1558897839560" duration="28767000" />
       <workItem from="1558936220299" duration="1793000" />
-      <workItem from="1560965608345" duration="6096000" />
+      <workItem from="1560965608345" duration="6379000" />
     </task>
     <servers />
   </component>
@@ -695,7 +699,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384008000" />
+    <option name="totallyTimeSpent" value="384291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -830,45 +834,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/MessageDaoCollectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/MessageResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Link.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/UserResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/Journey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -1053,16 +1018,6 @@
             <element signature="e#4799#4800#0" expanded="true" />
             <element signature="e#4848#4849#0" expanded="true" />
             <element signature="e#4888#4889#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="47" column="103" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1294,6 +1249,41 @@
             <element signature="e#2388#2389#0" expanded="true" />
             <element signature="e#2416#2417#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/StepDaoCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
         </state>
       </provider>
     </entry>

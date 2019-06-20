@@ -43,7 +43,7 @@ public class MessageDaoCollection implements MessageDao {
     public ArrayList<Message> getComments(User user) {
         ArrayList<Message> c = new ArrayList<>();
         for (Message comment : comments) {
-            if (comment.getUserName()== user.getName()) {
+            if (comment.getUserName().equals(user.getName())) {
                 c.add(comment);
             }
         }

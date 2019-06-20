@@ -53,7 +53,7 @@ public class JourneyDaoCollection implements JourneyDao{
     public List<Journey> getJourneyByUser(String name) {
         List<Journey> journeyss = new ArrayList<>();
         for (Journey j : journeys) {
-            if (j.getUserName()==name) {
+            if (j.getUserName().equals(name)){
                 journeyss.add(j);
             }
         }
