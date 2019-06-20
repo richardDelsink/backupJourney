@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7705522-03ba-4204-b7e3-64499bbcbd92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/StartUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,20 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1258">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="464">
+              <caret line="75" column="24" lean-forward="true" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -188,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/bean/JourneyBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/JourneyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDaoJpa.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDao.java" />
@@ -239,6 +227,7 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/JourneyDaoCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/MessageDaoCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/StartUp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java" />
       </list>
     </option>
   </component>
@@ -306,6 +295,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tripbackup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tripbackup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -363,7 +360,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="0e5cbc19-2105-46f9-ad02-6a3dae8b22b8" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560968508600" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561021142473" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -662,7 +659,7 @@
       <workItem from="1558466381480" duration="32604000" />
       <workItem from="1558897839560" duration="28767000" />
       <workItem from="1558936220299" duration="1793000" />
-      <workItem from="1560965608345" duration="6379000" />
+      <workItem from="1560965608345" duration="7051000" />
     </task>
     <servers />
   </component>
@@ -699,7 +696,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384291000" />
+    <option name="totallyTimeSpent" value="384963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1273,17 +1270,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="391">
+          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/StartUp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1258">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="464">
+          <caret line="75" column="24" lean-forward="true" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
         </state>
       </provider>
     </entry>

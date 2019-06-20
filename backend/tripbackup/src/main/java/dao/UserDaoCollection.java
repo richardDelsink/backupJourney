@@ -62,7 +62,7 @@ public class UserDaoCollection implements UserDao{
     @Override
     public boolean login(String username, String password) {
         for (User u : users) {
-            if (u.getName() == username && u.getPassword() == password) {
+            if (u.getName().equals(username) && u.getPassword().equals(password)) {
                 return true;
             }
         }
