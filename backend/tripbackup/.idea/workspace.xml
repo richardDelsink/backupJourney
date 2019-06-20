@@ -115,8 +115,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
+            <state relative-caret-position="551">
+              <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1687#1688#0" expanded="true" />
@@ -658,7 +658,7 @@
       <workItem from="1558466381480" duration="32604000" />
       <workItem from="1558897839560" duration="28767000" />
       <workItem from="1558936220299" duration="1793000" />
-      <workItem from="1560965608345" duration="5315000" />
+      <workItem from="1560965608345" duration="5489000" />
     </task>
     <servers />
   </component>
@@ -695,7 +695,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383227000" />
+    <option name="totallyTimeSpent" value="383401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1283,8 +1283,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDaoJpa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
+        <state relative-caret-position="551">
+          <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1687#1688#0" expanded="true" />
